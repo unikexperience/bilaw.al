@@ -30,18 +30,6 @@ class String
 	end
 end
 
-# Help commands
-desc "Show all the available commands"
-task :help do
-	puts "Jekyll Usage:"
-	puts "  rake install     :: Generates necessary files for Jekyll."
-	puts "  rake development :: Run local development server"
-	puts "  rake open        :: Open server if development server is running"
-	puts "  rake production  :: Generate Jekyll site"
-	puts "  rake about       :: About Jekyll Rakefile"
-	puts 
-end
-
 # Generate content.
 namespace "new" do
 	task :post do
@@ -109,7 +97,6 @@ end
 desc "Installs the necessary files to get started."
 task :install do
 	`mv .sample.gitignore .gitignore`
-	`cp _config.sample.yml _config.yml`
 	puts "Hooray, you're all good to go. See _config.yml and `rake development` to get started."
 	puts
 end
