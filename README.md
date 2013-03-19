@@ -1,31 +1,33 @@
 <p align='center'><img src="http://bilaw.al/images/iphone-icon-114x114.png"></p>
 
-This repository contains the source code behind Bilaw.al. It's built on top of [Jekyll](http://github.com/mojombo/jekyll) with custom enhancements (such as a nice Rakefile) to make it easier to create and manage, so I decided to open source it. You're more than welcome to use my template (no images) and I would appreciate a linkback to either this repository or bilaw.al.
+This repository contains the source code behind Bilaw.al, a blog built on [Jekyll](http://github.com/mojombo/jekyll). It has been modified to make it easier to create and manage your content, and so that's why I decided to open source it. You're totally welcome to use my template (but no images) for free, though I would appreciate a linkback to either this repository or Bilaw.al (either one isn't necessary).
 
-**Demo:** See the [site running this source code, bilaw.al](http://bilaw.al).
+**Demo:** See the [live site running this source code](http://bilaw.al).
 
 ## Getting Setup
-* Make sure you've got [Ruby](http://www.ruby-lang.org/en/downloads/) and [Git](http://git-scm.com/download) installed.
+* 1. Make sure you've got [Ruby](http://www.ruby-lang.org/en/downloads/) and [Git](http://git-scm.com/download) installed.
 
-* Clone this repository by running the following command:
+* 2. Clone this repository by running the following command:
 ```
 $ git clone https://github.com/bih/bilaw.al.git
 ```
 
-* Run the commands (in order):
+* 3. Run the commands (in the following order):
 ```
 $ gem install bundler
 ```
+
+* 4. Using Bundler, download all the dependency gems.
 ```
 $ bundle install
 ```
 
-* Right, we now need to get Jekyll ready:
+* 5. Right, we now need to get Jekyll ready:
 ```
 $ rake install
 ```
 
-* Now we're all setup.
+* 6. Now we're all setup.
 
 ## Developing your website
 It's incredibly easy to edit your site using my version of Jekyll. [Click here](http://github.com/mojombo/jekyll) if you want to see how Jekyll works.
@@ -58,7 +60,7 @@ $ rake production
 ```
 
 ## Publishing your site
-After you've called the `$ rake production`, your final HTML site should be located in the **_production** folder. Just upload the contents of the folder to your choice -- check out [Amazon S3](http://aws.amazon.com/s3), [AppFog](http://appfog.com) or [GitHub Pages](https://help.github.com/categories/20/articles).
+After you've called the `$ rake production` command, your publishable site should be located in the **_production** folder. Upload the folder to any provider of your choosing -- some notable ones are [Amazon S3](http://aws.amazon.com/s3), [AppFog](http://appfog.com) or [GitHub Pages](https://help.github.com/categories/20/articles).
 
-## Maintaining
-As I update my blog often (or I've told myself I will), I should be updating this as frequently as possible. The idea is that it can act as a great neat framework that can encourage people to use static-site generators such as Jekyll. If you find any issues or have any questions, feel free to contribute or contact me [on Twitter](http://twitter.com/bilawalhameed). Finally, be awesome.
+## Maintaining Bilaw.al
+As I update my blog often (so I've told myself), I should also be updating this quite frequently. The main objective is that it can act as a great mini-framework for bloggers to get started on Jekyll -- in efforts to boost the popularity of static-site generators. Feel free to contribute, and if you've got any questions or issues, please contact me [on Twitter](http://twitter.com/bilawalhameed). **Have fun!**
