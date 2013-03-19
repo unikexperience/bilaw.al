@@ -5,29 +5,29 @@ This repository contains the source code behind Bilaw.al, a blog built on [Jekyl
 **Demo:** See the [live site running this source code](http://bilaw.al).
 
 ## Getting Setup
-* 1. Make sure you've got [Ruby](http://www.ruby-lang.org/en/downloads/) and [Git](http://git-scm.com/download) installed.
+* **Important:** Make sure you've got [Ruby](http://www.ruby-lang.org/en/downloads/) and [Git](http://git-scm.com/download) installed, or the installation will **not** work. Mac OS X users should already have Ruby installed.
 
-* 2. Clone this repository by running the following command:
+* Clone this repository by running the following command:
 ```
 $ git clone https://github.com/bih/bilaw.al.git
 ```
 
-* 3. Run the commands (in the following order):
+* Run the commands (in the following order):
 ```
 $ gem install bundler
 ```
 
-* 4. Using Bundler, download all the dependency gems.
+* Using Bundler, download all the dependency gems.
 ```
 $ bundle install
 ```
 
-* 5. Right, we now need to get Jekyll ready:
+* Next, complete setup by running this command.
 ```
 $ rake install
 ```
 
-* 6. Now we're all setup.
+* **You're all setup**. Go treat yourself.
 
 ## Developing your website
 It's incredibly easy to edit your site using my version of Jekyll. [Click here](http://github.com/mojombo/jekyll) if you want to see how Jekyll works.
