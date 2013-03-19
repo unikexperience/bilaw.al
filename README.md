@@ -1,20 +1,29 @@
-![http://bilaw.al/images/iphone-icon-228x228.png](http://bilaw.al)
-## Bilaw.al (Powered by Jekyll) ##
+<p align='center'><img src="http://bilaw.al/images/iphone-icon-114x114.png"></p>
 
-I've used [Jekyll](http://jekyllrb.com) to build my new website, bilaw.al. I have added some goodness to make it easier for you to get started with, and you're more than welcome to modify my site template (it'd be nice for a linkback too!).
+This repository contains the source code behind Bilaw.al. It's built on top of [Jekyll](http://github.com/mojombo/jekyll) with custom enhancements (such as a nice Rakefile) to make it easier to create and manage, so I decided to open source it. You're more than welcome to use my template (no images) and I would appreciate a linkback to either this repository or bilaw.al.
+
+**Demo:** See the [site running this source code, bilaw.al](http://bilaw.al).
 
 ## Getting Setup
-* Make sure you've got Ruby installed (Check by entering `ruby --version` in your Terminal). [Click here for instructions](http://www.ruby-lang.org/en/downloads/).
+* Make sure you've got [Ruby](http://www.ruby-lang.org/en/downloads/) and [Git](http://git-scm.com/download) installed.
 
 * Clone this repository by running the following command:
-```git clone https://github.com/bih/bilaw.al.git``
+```
+$ git clone https://github.com/bih/bilaw.al.git
+```
 
 * Run the commands (in order):
-```gem install bundler```
-```bundle install```
+```
+$ gem install bundler
+```
+```
+$ bundle install
+```
 
 * Right, we now need to get Jekyll ready:
-```rake install``
+```
+$ rake install
+```
 
 * Now we're all setup.
 
@@ -23,14 +32,33 @@ It's incredibly easy to edit your site using my version of Jekyll. [Click here](
 
 Configuration: _config.yml
 
-Create a new post: `rake new:post`
-Create a new page: `rake new:page`
-Start development server: `rake development`
-Open development server in browser: `rake open`
-Generate production site `rake production`
+Create a new post: 
+```
+$ rake new:post
+```
+
+Create a new page: 
+```
+$ rake new:page
+```
+
+Start development server: 
+```
+$ rake development
+```
+
+Open development server in browser: 
+```
+$ rake open
+```
+
+Generate production site: 
+```
+$ rake production
+```
 
 ## Publishing your site
-After you've called the `rake production`, your final HTML site should be located in _production/ and you can just upload the entire folder to the server of your choice.
+After you've called the `$ rake production`, your final HTML site should be located in the **_production** folder. Just upload the contents of the folder to your choice -- check out [Amazon S3](http://aws.amazon.com/s3), [AppFog](http://appfog.com) or [GitHub Pages](https://help.github.com/categories/20/articles).
 
-## Maintenance
-As I use this for my site, I will update it more than usual. I hope it acts as a great framework for any other Jekyll users. Be awesome. ;)
+## Maintaining
+As I update my blog often (or I've told myself I will), I should be updating this as frequently as possible. The idea is that it can act as a great neat framework that can encourage people to use static-site generators such as Jekyll. If you find any issues or have any questions, feel free to contribute or contact me [on Twitter](http://twitter.com/bilawalhameed). Finally, be awesome.
