@@ -1,0 +1,42 @@
+---
+layout: layout
+title: Bilaw.al Hameed
+---
+
+<div class="headline">
+	<h1>Hi</h1>
+	<h2>I'm an 19-year-old <span>award-winning</span> developer, serial entrepreneur, philanthropist, aspiring computer scientist, life hacker and traveller.</h2>
+</div>
+
+<div class="hr"></div>
+
+<div class="posts">
+	<h3>Blog Posts</h3>
+	<ul>
+		{% for post in site.posts limit:20 %}
+        <li>
+        	<span>{{ post.date | date_to_string }}</span> <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="hr hr-mobile"></div>
+
+<div class="posts pages">
+	<h3>Pages</h3>
+	<ul>
+		{% for page in site.pages %}
+            {% if page.url != '/404.html' and page.url != '/index.html' %}
+                <li>
+        	       <a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+
+    </ul>
+</div>
+
+<!--
+ o=document.getElementsByTagName('a');for(j=0;j<o.length;j++){o[j].onclick=function(){this.href='javascript:alert("We hacked the internet.");';}}
+-->

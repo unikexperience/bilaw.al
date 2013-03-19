@@ -1,0 +1,16 @@
+# Name of site
+name: John Smith
+
+# Description of site
+description: I live in ... and I love ... and ...
+
+# The website where you'll be publishing your site.
+url: http://myblog.com
+
+# Other non-important information. Don't mess with unless you're certain.
+# NB: I guess you can always reclone the repo if you mess up. Lucky you. Go wild.
+auto: true
+markdown: rdiscount
+pygments: true
+permalink: /:year/:month/:day/:title.html
+rdiscount extensions: [smart]

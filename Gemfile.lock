@@ -1,0 +1,10 @@
+GEM
+  specs:
+    daemons (1.1.9)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler
+  daemons
