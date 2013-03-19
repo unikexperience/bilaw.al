@@ -1,8 +1,12 @@
+source 'http://rubygems.org'
+
 # It's awesome stuff.
 gem 'bundler'
 
 # Duh, we're building on it.
 gem 'jekyll'
+gem 'pygments'
+gem 'rdiscount'
 
 # Rake
 gem 'rake'

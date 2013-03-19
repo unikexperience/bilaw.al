@@ -139,8 +139,8 @@ end
 # Generate the final site, ready for us to go!
 desc "Generates the production site"
 task :production do
-	`jekyll . _production --auto false`
-	puts "Yipee, we generated your site ready for production. It's stored in _production/"
+	`jekyll . _production --no-auto`
+	puts "Yay! We generated your final site in the _production folder."
 	puts
 end
 
