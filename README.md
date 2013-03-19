@@ -32,7 +32,7 @@ $ rake install
 ## Developing your website
 It's incredibly easy to edit your site using my version of Jekyll. [Click here](http://github.com/mojombo/jekyll) if you want to see how Jekyll works.
 
-Configuration: _config.yml
+Configuration file: `_config.yml`
 
 Create a new post: 
 ```
