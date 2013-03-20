@@ -30,6 +30,12 @@ class String
 	end
 end
 
+# Is this the Jekyll folder? No funny business.
+unless File.directory?('_posts') and File.exists?('_config.yml') and File.directory?('_layouts') then
+	puts "Error: Please navigate to the root of your Jekyll installation."
+	exit 1
+end
+
 # Generate content.
 namespace "new" do
 	task :post do
