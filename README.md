@@ -12,7 +12,7 @@ This repository contains the source code behind Bilaw.al, a blog built on [Jekyl
 $ git clone https://github.com/bih/bilaw.al.git
 ```
 
-* Run the commands (in the following order):
+* Install Bundler (it's short for "life-saver").
 ```
 $ gem install bundler
 ```
