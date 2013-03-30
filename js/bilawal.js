@@ -8,10 +8,10 @@
 		if($(".about-header").length == 0) {
 			var _eq = -1;
 			$(".content p").each(function(){
-				if($(this).hasClass('update')) _eq++;
+				if($(this).hasClass('update') == false) { _eq++; }
 			});
 
-			$(".content p:eq("+_eq+")").append(" <span class='icon-me'></span>");
+			$(".content p:eq("+_eq+")").append("<span class='icon-me'></span>");
 		}
 
 		/* Zero Clipboard */
