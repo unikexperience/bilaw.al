@@ -6,7 +6,12 @@
 	$(document).ready(function(){
 
 		if($(".about-header").length == 0) {
-			$("<span />").addClass('icon-me').appendTo(".content p:last-child");
+			var _eq = -1;
+			$(".content p").each(function(){
+				if($(this).hasClass('update')) _eq++;
+			});
+
+			$(".content p:eq("+_eq+")").append(" <span class='icon-me'></span>");
 		}
 
 		/* Zero Clipboard */

@@ -959,6 +959,10 @@ header div a h1 {
   width: 99.95%;
 }
 
+.about-content section p a {
+  color: #777;
+}
+
 .contact-content {
   font-family: 'leitura-news', 'helvetica neue', 'arial';
   padding-bottom: 30px;
@@ -1097,12 +1101,20 @@ header div a h1 {
   border-bottom: 3px solid #1e86dd;
 }
 
-.post p {
+.post p,
+.post ul li,
+.post ol li {
   font-family: 'leitura-news', 'helvetica neue', 'arial';
-  font-size: 22px;
+  font-size: 20px;
   color: #555;
-  letter-spacing: 0.5px;
-  line-height: 40px;
+  line-height: 36px;
+}
+
+.post ul li,
+.post ol li {
+  font-size: 20px;
+  line-height: 36px;
+  padding-bottom: 15px;
 }
 
 .post p strong,
@@ -1134,7 +1146,9 @@ header div a h1 {
 .post h5, .post-h5 { font-size: 20px; line-height: 30px; }
 .post h6, .post-h6 { font-size: 18px; line-height: 28px; }
 
-.post p a {
+.post p a,
+.post ul li a,
+.post ol li a {
   color: #1e86dd;
   text-decoration: none;
   padding-bottom: 2px;
@@ -1145,7 +1159,9 @@ header div a h1 {
   -o-transition: border-width .25s; /* Opera */
 }
 
-.post p a:hover {
+.post p a:hover,
+.post ul li a:hover,
+.post ol li a:hover {
   background: #1e86dd;
   color: #fff;
   padding: 5px 0;
@@ -1159,7 +1175,7 @@ header div a h1 {
   color: #555;
 }
 
-.post p:last-child span.icon-me {
+.post p span.icon-me {
   background: url(./../images/icon-20x20-transparent.png) no-repeat;
   background-size: 20px 20px;
   display: inline-block;
@@ -1167,6 +1183,13 @@ header div a h1 {
   height: 20px;
   margin-left: 5px;
 }
+
+blockquote {
+  border-left: 5px solid #AAA;
+  padding-left: 5px;
+}
+
+.post p.update {}
 
 .permalink {
   background: url(./../images/blog-permalink.png) no-repeat;
@@ -1263,7 +1286,6 @@ header div a h1 {
   }
 
   .post h1.title {
-    text-shadow: 0 1px rgba(0, 0, 0, 0.1);
   }
 
   .post .date {
@@ -1273,7 +1295,6 @@ header div a h1 {
   .post p {
     font-size: 18px;
     line-height: 32px;
-    text-shadow: 0 1px rgba(0, 0, 0, 0.1);
   }
 
   header {

@@ -6,11 +6,11 @@ excerpt: A short while ago, I discovered that JavaScript allows you to change a 
 hackernews: https://news.ycombinator.com/item?id=5389565
 ---
 
-A short while ago, I discovered that JavaScript allows you to **change the &lt;a&gt; href *after* you click on it**. It may not seem that serious at first glance, but rest assured, it can trick customers into giving in their details to fraudsters.
+Recently, I *accidently* discovered that JavaScript allows you to **change the `<a>` href attribute *after* you click on it**. As *obvious* as it may sound, many internet users do trust the "status bar" displaying where a link directs to, when in actual fact it can direct you elsewhere (without your consent, in as short as 65 characters).
 
 Let me show you an example. <a href="http://www.paypal.co.uk/" class="hijack">This link should take you to PayPal</a>.
 
-You'll see that you **do not** end up on PayPal (*except on Opera, where it appears to have been fixed*). That's because when you clicked on the link, I ran some code that changed the *href* attribute and, surprisingly, the browser sent me to the *new link*. **That shouldn't happen**. Website visitors (and perhaps most tech-savvy people) can and will presume where they end up could just be a genuine redirection from, in this case, PayPal. Last year, PayPal redirected their UK homepage to paypal-business.co.uk for months. My assumption is website visitors have grown accustom to redirections, and if this flaw acts as such, it can pose a real threat <s>to what I call *Phishing 2.0*</s>.
+You'll see that you **do not** end up on PayPal (*except on Opera, where it appears to have been fixed*). That's because when you clicked on the link, I ran code that changed the `"href"` attribute **after** you clicked on it, and the browser *sent you to the new link*. **That shouldn't happen** (and [plenty of others agree](https://twitter.com/search?q=http%3A%2F%2Fbilaw.al%2F2013%2F03%2F17%2Fhacking-the-a-tag-in-100-characters.html&src=typd)). Website visitors (including most tech-savvy people) can and will presume this sort of "flaw" can actually be a genuine redirection. Last year, PayPal redirected their UK homepage to www.paypal-business.co.uk for marketing reasons. My assumption is that website visitors have grown accustom to redirections, and if this flaw acts as such, it can pose a real threat.
 
 Let's take a look at the JavaScript:
 {% highlight javascript %}
@@ -22,16 +22,16 @@ for(i in links) {
     };
 }
 
-// Compressed (was 100; now 67 characters exc. the link)
+// Compressed (was 100; now 65 characters exc. the link)
 // Thanks to sgoel from HN
-o=document.links;for(i in o){o[i].onclick=function(){this.href='//bit.ly/141nisR'}}
+for(i in o=document.links){o[i].onclick=function(){this.href='//bit.ly/141nisR'}}
 
 {% endhighlight %}
 
-It's also very difficult to detect. Almost *everyone* who uses JavaScript/jQuery will bind an event to an &lt;a&gt; tag, so it's not as simple as unbinding every &lt;a&gt; onclick function. It's very much possible to wrap the code above to a *setTimeout* to bypass whatever solution can be found. Any half-decent hacker can make a computer virus or embeddable JavaScript code that can inject this code alongside another piece of software. As it's incredibly easy to update JavaScript (particularly embeddable), I would say that tools such as McAfeeSecure and PhishTank won't be able to keep up with phishing websites up to the second.
+It's not easy to detect, either. Most JavaScript-powered websites bind events to `<a>` tags, so to unbind every `<a>` tag would break the website. Any JavaScript-based fix would be able to be overwritten through the use of `setTimeout`. Random snippets of code on the web, XSS exploitations and shady website owners will utilise this to "trick" you into presuming you are on a legitimate website. Whilst it may not be programmatically complex, it's a simple but effective way to steal information.
 
-<s>As it shows no real benefit, I'm pledging to [World Wide Web Consortium (W3C)](http://www.w3.org) and major browsers to disable the option to change the *href* attribute **after an onclick event**. It is an incredibly simple interpreter flaw, and whilst it may seem normal to some, it can be used for ill-fated purposes rather than good. I'm aware Google and websites as such use this, but if we're suppose to making the web safer, we can't allow for what can be simple flaws to exist. There are alternatives (such as using the genuine link rather than masking it), and for that reason, it should be disabled. It's not worth internet users being victims of fraud and theft.</s>
+Whilst the concept of "hijacking" your [links are not new](http://www.reddit.com/r/netsec/comments/1ah2gq/hacking_the_a_tag_in_100_characters_deviously/c8xcw4l), it doesn't mean it should be ignored (or, at least, be this simple). This, plain and simple, **misleads internet users** into thinking they're going to a legitimate site. It isn't a huge problem, but it still remains *a problem*. I previously suggested to disable the code above, but since retracted it after considering it can break websites such as Google and Facebook who use this. Alternatively, I suggest for browsers to **throw a warning** when a link takes you to a **different domain** to the one stated in the status bar. This doesn't break Google or Facebook, and fixes what is arguably a simple interpreter flaw.
 
-*Update (19/3) &mdash;* My new pledge is to **warn users if the location of a link changes to a different domain after they click on it** ([+1 to abididea](http://www.reddit.com/user/abadidea)). Sites like Google and Facebook can continue operating normally as they use the same domain, the internet doesn't break, and it eliminates the possibility of phishing. Everyone wins (except phishers, of course!). I **need your help** to make major browsers adopt this as quickly as possible. Let's make it one less easy way for fraudsters to victimize internet users.
+<p class='update'><i>Update (19/3) &mdash;</i> I've suggested the fix to Firefox, and waiting for a response.</p>
 
-*Update (19/3) &mdash;* I've suggested the fix to Firefox, and waiting for a response.
+<p class='update'><i>Update (20/3) &mdash;</i> Rumours have circulated that Google Chrome will release a fix, though I'm yet to hear confirmation.</p>
